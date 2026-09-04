@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iulio // Systems Architecture, Autonomous AI & Cloud Engineering</title>
+  <meta name="description" content="Technical portfolio and architectural case studies: Autonomous Multi-Agent Systems, GovTech & European Funds, FinTech Compliance, and Web3 Infrastructure.">
+  <meta name="author" content="iulio">
+  <meta property="og:title" content="Iulio // Tech Portfolio & Architecture Showcase">
+  <meta property="og:description" content="High-impact technical achievements across AI, Multi-Agent systems, FinTech, and Cloud Infrastructure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iulio.github.io/">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              card: '#0B132B',
+              cardBorder: '#1E293B',
+              cyan: '#06B6D4',
+              emerald: '#10B981',
+              indigo: '#6366F1',
+              purple: '#A855F7'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    body {
+      background-color: #030712;
+      color: #F3F4F6;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
+    }
+
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.12) 0%, rgba(99, 102, 241, 0.08) 35%, transparent 70%);
+    }
+
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-950 text-gray-100 selection:bg-cyan-500/20 selection:text-cyan-300">
+
+  <!-- Background Glow & Grid -->
+  <div class="fixed inset-0 pointer-events-none hero-glow z-0"></div>
+  <div class="fixed inset-0 pointer-events-none bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-30 z-0"></div>
+
+  <!-- Main Container -->
+  <div class="relative z-10">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-gray-950/80 border-b border-gray-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-cyan-500/20">
+            &gt;_
+          </div>
+          <div>
+            <span class="font-bold tracking-tight text-white flex items-center gap-1.5 font-mono text-sm">
+              iulio <span class="text-cyan-400">//</span> portfolio
+            </span>
+            <span class="text-[10px] text-gray-400 block -mt-1 font-mono">systems &amp; ai architecture</span>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-gray-300">
+          <a href="#stats" class="hover:text-cyan-400 transition">Metrics</a>
+          <a href="#projects" class="hover:text-cyan-400 transition">Case Studies</a>
+          <a href="#security" class="hover:text-cyan-400 transition">IP &amp; Security</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/iulio" target="_blank" rel="noopener noreferrer"
+             class="flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-gray-200 bg-gray-900 hover:bg-gray-800 border border-gray-700 hover:border-gray-600 rounded-xl transition shadow-sm font-mono">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span>github.com/iulio</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 text-center">
+      <!-- Status Pill -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/50 text-cyan-300 text-xs font-mono mb-6 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Systems Architecture &amp; Production Deployments</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none">
+        Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400">Autonomous AI</span>, GovTech &amp; High-Impact Systems
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Engineering portfolio featuring multi-agent swarms, RAG compliance engines, automated GovTech &amp; EU grant pipelines, and enterprise Web3 infrastructure.
+      </p>
+
+      <!-- Trust Notice -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 font-mono">
+        <div class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/80 border border-gray-800 rounded-lg">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          <span>Proprietary Codebases 100% Confidential</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/80 border border-gray-800 rounded-lg">
+          <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+          <span>Multi-Agent Swarms &amp; MCP</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/80 border border-gray-800 rounded-lg">
+          <i data-lucide="server" class="w-4 h-4 text-purple-400"></i>
+          <span>Serverless Scale-to-Zero</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Highlights Section -->
+    <section id="stats" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-5 border border-gray-800/80">
+          <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
+            <span>19</span><span class="text-cyan-400 text-xl">+</span>
+          </div>
+          <div class="text-xs font-bold text-gray-300 mt-1">Systems Engineered</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Microservices, RAG, Web3 &amp; Agents</div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-gray-800/80">
+          <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
+            <span>4</span><span class="text-emerald-400 text-xl">x</span>
+          </div>
+          <div class="text-xs font-bold text-gray-300 mt-1">Specialized Domains</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">GovTech, AI, FinTech, Blockchain</div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-gray-800/80">
+          <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
+            <span>100</span><span class="text-indigo-400 text-xl">%</span>
+          </div>
+          <div class="text-xs font-bold text-gray-300 mt-1">Deterministic Accuracy</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Strict legal &amp; fiscal validation</div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-gray-800/80">
+          <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
+            <span>&lt; 5</span><span class="text-purple-400 text-xl">€</span>
+          </div>
+          <div class="text-xs font-bold text-gray-300 mt-1">Ultra-Low Cloud Cost</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Scale-to-zero serverless footprint</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Section Header & Category Filters -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2.5">
+            <i data-lucide="layers" class="w-6 h-6 text-cyan-400"></i>
+            Architectural Case Studies
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-400 mt-1">
+            Filter case studies by architectural domain and functional capability.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2" id="filter-buttons">
+          <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 transition cursor-pointer">
+            All (16)
+          </button>
+          <button data-filter="ai" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-gray-900 text-gray-400 hover:text-gray-200 border border-gray-800 transition cursor-pointer">
+            AI &amp; Multi-Agent
+          </button>
+          <button data-filter="govtech" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-gray-900 text-gray-400 hover:text-gray-200 border border-gray-800 transition cursor-pointer">
+            GovTech &amp; Grants
+          </button>
+          <button data-filter="fintech" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-gray-900 text-gray-400 hover:text-gray-200 border border-gray-800 transition cursor-pointer">
+            FinTech &amp; Tax
+          </button>
+          <button data-filter="web3" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-gray-900 text-gray-400 hover:text-gray-200 border border-gray-800 transition cursor-pointer">
+            Web3 &amp; Infra
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+
+        <!-- Project 1: GrantFlow SaaS -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="govtech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                GovTech &amp; SaaS
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="cloud" class="w-3.5 h-3.5 text-cyan-400"></i> Cloud Run Live
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">GrantFlow AI Platform</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Full-stack autonomous SaaS automating non-reimbursable EU grant applications. Generates 10-document MySMIS packages (.docx, active formula .xlsx, DNSH reports) with zero human intervention.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Stripe Checkout &amp; Cloud Storage Persistence</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Tiered LLM routing (<$0.001/call) &amp; scale-to-zero serverless runtime (<5€/mo).</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Next.js 14</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">FastAPI</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">ChromaDB</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Stripe Live</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Agency OS & MCP Engine -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="govtech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                MCP Protocol &amp; Operations
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="terminal" class="w-3.5 h-3.5 text-purple-400"></i> FastMCP Engine
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Agency OS &amp; MCP Server</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Enterprise consulting back-office operating over FastMCP (SSE / Stdio). Validates 18 technical field parameters (TEN-T, BESS, ATR power), scores 4 multi-program families (PR, AFIR, PNRR, Start-up), and resolves MySMIS 72h clarification queries.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Multi-Million € Pipeline Management</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">9 Tools, 5 Resources, dynamic slider simulation &amp; Law 554/2004 defense generator.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">FastMCP</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Python 3.13</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">React + Vite</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Claude Desktop</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Freight Agent Platform -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                Multi-Agent Swarm
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="truck" class="w-3.5 h-3.5 text-indigo-400"></i> Logistics AI
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Freight Agent Platform</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Autonomous logistics orchestration system leveraging CrewAI swarms. Simulates multi-role dispatchers, freight brokers, carrier matching, price negotiation, and ETA optimization.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-purple-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Hierarchical Multi-Agent Consensus</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Real-time load allocation, automated quotation, and rate negotiation logic.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">CrewAI</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">LangChain</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">OpenAI</span>
+          </div>
+        </div>
+
+        <!-- Project 4: ANAF RAG Assistant -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="fintech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                RAG &amp; Fiscal Tech
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="file-search" class="w-3.5 h-3.5 text-cyan-400"></i> Legal RAG
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">ANAF Fiscal RAG Assistant</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Retrieval-Augmented Generation pipeline over the Romanian Fiscal Code, Emergency Ordinances (OUG), and ANAF procedural guidelines. Implements hybrid vector + BM25 retrieval to eliminate hallucinations.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-indigo-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Strict Citation &amp; Paragraph Grounding</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Reduces token overhead by 90% via semantic chunking and reranking.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">ChromaDB</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">BM25</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">SentenceTransformers</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">FastAPI</span>
+          </div>
+        </div>
+
+        <!-- Project 5: FacturaGuard MVP -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="fintech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                Compliance &amp; Security
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="shield" class="w-3.5 h-3.5 text-emerald-400"></i> e-Factura
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">FacturaGuard Invoicing Engine</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Automated invoice protection and validation microservice for the Romanian RO e-Factura (UBL 2.1 XML) standard. Performs syntactic validation, schema conformance, and anti-fraud verification.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Automated XML Ingestion &amp; Audit</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Zero-delay tax validation and ERP reconciliation pipelines.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">UBL 2.1 XML</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">FastAPI</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Security</span>
+          </div>
+        </div>
+
+        <!-- Project 6: TED Tender Assistant -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="govtech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                EU Procurement
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="briefcase" class="w-3.5 h-3.5 text-indigo-400"></i> TED Assistant
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">TED Public Tender Assistant</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Automated intelligence assistant for European public procurement tenders published in Tenders Electronic Daily (TED). Scans high-value notices, evaluates qualification criteria, and drafts proposal skeletons.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Automated Bid Opportunity Scoring</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Natural language extraction of qualification criteria and deadlines.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">TED API</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">NLP</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">FastAPI</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Docker</span>
+          </div>
+        </div>
+
+        <!-- Project 7: Ethereum Crypto Stack -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="web3">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                Web3 &amp; DevOps
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i> Private EVM
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Ethereum Crypto Stack</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Complete containerized Ethereum infrastructure environment with Docker Compose orchestrating private Geth nodes, Blockscout blockchain explorer, Hardhat smart contract toolchain, Remix, and CI/CD.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-indigo-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>One-Click Private EVM Testnet</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Deterministic local block explorer and automated smart contract verification.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Geth</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Blockscout</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Hardhat</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Docker Compose</span>
+          </div>
+        </div>
+
+        <!-- Project 8: Marketing Agents Team -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                Agent Swarm
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="share-2" class="w-3.5 h-3.5 text-purple-400"></i> Growth AI
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Marketing Agents Team</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Collaborative multi-agent marketing unit coordinating market research, competitive angle discovery, copy generation, and SEO strategy optimization through structured peer review loops.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-purple-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Automated Audience Segmentation</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Iterative drafting and sentiment alignment across marketing personas.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Multi-Agent</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">LLM Swarms</span>
+          </div>
+        </div>
+
+        <!-- Project 9: Docker MCP Sandbox -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                MCP &amp; Sandboxing
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="box" class="w-3.5 h-3.5 text-cyan-400"></i> Container MCP
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Docker MCP Agent Sandbox</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Model Context Protocol (MCP) server providing safe, sandboxed container isolation for autonomous agents to execute shell commands, manage container lifecycles, and test code safely.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Strict Ephemeral Isolation</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Safeguards host machines against unconstrained code execution.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Docker API</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">MCP Protocol</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Node / Python</span>
+          </div>
+        </div>
+
+        <!-- Project 10: IDWise Simple Journey -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="fintech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                KYC / Identity
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="user-check" class="w-3.5 h-3.5 text-emerald-400"></i> Verification
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">IDWise Journey Integration</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Client onboarding journey implementing automated KYC/AML identity verification, biometric liveness validation, and document OCR checks for high-compliance applications.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Automated AML Compliance</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Seamless mobile and web verification journeys with minimal drop-off.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Identity API</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Biometrics</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Webhooks</span>
+          </div>
+        </div>
+
+        <!-- Project 11: MLRO Anti-Money Laundering -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="fintech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                RegTech / AML
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-400"></i> Financial Crime
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">MLRO Compliance Engine</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Money Laundering Reporting Officer (MLRO) intelligence suite providing automated pattern recognition, transaction risk scoring, and suspicious activity reporting (SAR) generation.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-indigo-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Heuristic Risk Stratification</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Deterministic rule evaluation alongside anomaly detection algorithms.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">RegTech</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Anomaly Detection</span>
+          </div>
+        </div>
+
+        <!-- Project 12: EURES Scanner -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="govtech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                GovTech / Labor
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="compass" class="w-3.5 h-3.5 text-cyan-400"></i> EU Scanner
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">EURES Labor Market Scanner</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Automated analytical scanner monitoring cross-border labor market opportunities from the European EURES portal across 31 countries, structuring opportunities into categorized pipelines.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Cross-Border Opportunity Discovery</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Automated deduplication, salary normalization, and skill extraction.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Scraping</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Data Analytics</span>
+          </div>
+        </div>
+
+        <!-- Project 13: MiniCRM Engine -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="fintech">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                Sales Operations
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-400"></i> B2B Pipeline
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">MiniCRM Pipeline Architecture</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Lightweight, high-velocity CRM platform engineered for consulting agencies and B2B software teams. Manages client lifecycle from CUI qualification to signed contracts.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Real-Time Pipeline Funnel</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Zero bloat, instant indexing, and automated contract tracking.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">Python</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">SQLAlchemy</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-emerald-400 border border-gray-800">REST API</span>
+          </div>
+        </div>
+
+        <!-- Project 14: FromOllama Offline LLM -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                Private Inference
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-purple-400"></i> Local LLMs
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">FromOllama Local Inference</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Air-gapped and local offline LLM deployment framework utilizing quantization (GGUF) and Ollama for zero-leak data processing in confidential enterprise environments.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-purple-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Zero Cloud Data Exposure</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Quantized Llama 3, Mistral, and Qwen models running purely on local CPU/RAM.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Ollama</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">Llama.cpp</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-purple-400 border border-gray-800">GGUF</span>
+          </div>
+        </div>
+
+        <!-- Project 15: SRTU Telemetry -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="web3">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                IoT &amp; Telemetry
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="activity" class="w-3.5 h-3.5 text-indigo-400"></i> Data Telemetry
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">SRTU Telemetry System (v2 / v5)</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              High-throughput data telemetry, real-time logging, and state tracking framework engineered for mission-critical monitoring, high concurrency, and data persistence.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-indigo-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>High-Reliability State Streaming</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Real-time telemetry aggregation and visualization pipelines.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Telemetry</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Real-Time</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-indigo-400 border border-gray-800">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Project 16: Spring 5 WebApp -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="web3">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                Enterprise Java
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 flex items-center gap-1">
+                <i data-lucide="database" class="w-3.5 h-3.5 text-cyan-400"></i> Backend
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-tight">Spring 5 Enterprise App</h3>
+            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+              Enterprise Java web application demonstrating Spring Boot 5 architectural patterns, Hibernate ORM persistence, dependency injection, and RESTful service design.
+            </p>
+            <div class="mt-4 p-3 bg-gray-900/60 rounded-xl border border-gray-800/80 text-[11px] text-gray-300 space-y-1">
+              <div class="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Enterprise Architecture Patterns</span>
+              </div>
+              <p class="text-gray-400 text-[10px]">Robust domain-driven design with secure data access layers.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Spring Boot</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Java</span>
+            <span class="code-pill text-[10px] bg-gray-900 px-2 py-0.5 rounded text-cyan-400 border border-gray-800">Hibernate</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Security & Intellectual Property Section -->
+    <section id="security" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="rounded-3xl p-8 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 border border-gray-800 text-center relative overflow-hidden shadow-2xl">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto mb-4 border border-cyan-500/20">
+          <i data-lucide="lock" class="w-6 h-6"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white tracking-tight">Intellectual Property &amp; Confidentiality Guarantee</h3>
+        <p class="mt-2 text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          The projects listed in this showcase represent commercial SaaS products, enterprise consulting engines, and proprietary client software. All internal business logic, database schemas, cryptographic keys, and backend source files remain strictly private and protected.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400 font-mono">
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Zero Proprietary Source Leaks</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> GDPR &amp; NDA Compliant</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Air-Gapped Secret Management</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-gray-950/60 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-mono">
+        <div>
+          &copy; <span id="year"></span> iulio. Published via GitHub Pages.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/iulio" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition flex items-center gap-1">
+            <i data-lucide="github" class="w-3.5 h-3.5"></i> github.com/iulio
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Client-Side Filter & Icons Script -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set Current Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Category Filter Handler
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('#projects-grid > div');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update Button Active States
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-cyan-500/20', 'text-cyan-300', 'border-cyan-500/40');
+          b.classList.add('bg-gray-900', 'text-gray-400', 'border-gray-800');
+        });
+        btn.classList.add('active', 'bg-cyan-500/20', 'text-cyan-300', 'border-cyan-500/40');
+        btn.classList.remove('bg-gray-900', 'text-gray-400', 'border-gray-800');
+
+        // Filter Project Cards
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
